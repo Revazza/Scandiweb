@@ -1,0 +1,21 @@
+@import '../../../variables/variables.scss';
+
+.wrapper {
+  position: absolute;
+  width: 50px;
+  height: 56px;
+  right: 159px;
+  top: 25px;
+  @include fontRaleway(600);
+}
+
+.dropdown_head{
+  cursor: pointer;
+  img{
+    margin-left: 10px;
+  }
+}
+
+.rotate_arrow{
+  transform: rotate(180deg) ;
+}

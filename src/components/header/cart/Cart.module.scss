@@ -1,0 +1,28 @@
+.cart {
+  position: absolute;
+  width: fit-content;
+  height: 30px;
+  right: 145px;
+  top: 25px;
+}
+
+.amount {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  bottom: 33px;
+  left: 10px;
+  background-color: #1D1F22;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span{
+    color: #FFFFFF;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  img{
+    cursor: pointer;
+  }
+}
