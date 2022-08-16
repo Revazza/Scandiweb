@@ -76,7 +76,7 @@ class Currency extends Component {
           <img
             src="./assets/arrow.png"
             alt="arrow"
-            className={this.state.showDropdown ? styles.rotate_arrow : ""}
+            className={!this.state.showDropdown ? styles.rotate_arrow : ""}
           />
         </div>
         <CurrencyList

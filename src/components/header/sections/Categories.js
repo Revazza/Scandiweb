@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./Categories.module.scss";
 import { gql } from "@apollo/client/core";
 import { apolloClient } from "../../../index";
+import CategoryContext from "../../../context/CategoryContext";
 
 const GET_CATEGORIES = gql`
   query {
@@ -19,6 +20,8 @@ class Sections extends Component {
       categories: [],
     };
   }
+
+  static contextType = CategoryContext; 
 
   componentDidMount() {
     const fetchData = async () => {
@@ -41,6 +44,10 @@ class Sections extends Component {
     fetchData();
   }
 
+  onChangeCategory = (event) => {
+    this.context.changeCategoryItems(event.target.id);
+  };
+
   render() {
     return (
       <nav className={styles.nav_wrapper}>
@@ -48,6 +55,8 @@ class Sections extends Component {
           return (
             <div className={styles.nav_link} key={category.name}>
               <NavLink
+                onClick={this.onChangeCategory}
+                id={category.name}
                 to={`/${category.name}`}
                 className={({ isActive }) =>
                   isActive ? styles.active : styles.inactive
