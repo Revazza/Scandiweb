@@ -1,25 +1,55 @@
-@import '../../variables/variables.scss';
+@import "../../variables/variables.scss";
 
-.wrapper{
+.wrapper {
+  position: relative;
   box-sizing: border-box;
   padding: 15px;
-  border: 1px solid black;
   height: 444px;
   width: 100%;
-  img{
+  img {
     width: 100%;
     height: 80%;
     object-fit: cover;
   }
+  transition: 300ms;
+  cursor: pointer;
+  &:hover {
+    transition: 300ms;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  &:hover .cart{
+    transition: 300ms;
+    opacity: 1;
+  }
+}
+.cart{
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: $primary_green;
+  img{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+  }
+  position: absolute;
+  right: 20px;
+  bottom: 70px;
+  opacity: 0;
+
 }
 
-.item_info{
-  h3{
+.item_info {
+  h3 {
     margin-top: 20px;
     margin-bottom: 5px;
-    @include fontRaleway(300);    
+    @include fontRaleway(400);
   }
-  span{
+  span {
     @include fontRaleway(600);
   }
 }
