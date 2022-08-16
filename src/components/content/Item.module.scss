@@ -1,0 +1,25 @@
+@import '../../variables/variables.scss';
+
+.wrapper{
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid black;
+  height: 444px;
+  width: 100%;
+  img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  }
+}
+
+.item_info{
+  h3{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    @include fontRaleway(300);    
+  }
+  span{
+    @include fontRaleway(600);
+  }
+}

@@ -18,10 +18,11 @@ class Sections extends Component {
     super();
     this.state = {
       categories: [],
+      activeCategory: "all",
     };
   }
 
-  static contextType = CategoryContext; 
+  static contextType = CategoryContext;
 
   componentDidMount() {
     const fetchData = async () => {
@@ -45,7 +46,14 @@ class Sections extends Component {
   }
 
   onChangeCategory = (event) => {
-    this.context.changeCategoryItems(event.target.id);
+    const newCategory = event.target.id;
+    this.context.changeCategoryItems(newCategory);
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        activeCategory: newCategory,
+      };
+    });
   };
 
   render() {
@@ -58,8 +66,10 @@ class Sections extends Component {
                 onClick={this.onChangeCategory}
                 id={category.name}
                 to={`/${category.name}`}
-                className={({ isActive }) =>
-                  isActive ? styles.active : styles.inactive
+                className={
+                  category.name === this.state.activeCategory
+                    ? styles.active
+                    : styles.inactive
                 }
               >
                 {category.name}

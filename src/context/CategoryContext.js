@@ -57,26 +57,28 @@ export class CategoryProvider extends Component {
     super();
     this.state = {
       items: [],
+      category: "all",
     };
   }
 
   componentDidMount() {
     const getData = async () => {
       const data = await fetchData("all");
-      console.log(data);
       this.setState({
-        items:data
+        items: data,
+        category: "all",
       });
     };
     getData();
   }
 
   changeCategoryItems = async (newCategory) => {
+    console.log(newCategory);
     const data = await fetchData(newCategory);
-      console.log(data);
-      this.setState({
-        items:data
-      });
+    this.setState({
+      items: data,
+      category: newCategory,
+    });
   };
 
   render() {
@@ -85,6 +87,7 @@ export class CategoryProvider extends Component {
         value={{
           items: this.state.items,
           changeCategoryItems: this.changeCategoryItems,
+          category: this.state.category,
         }}
       >
         {this.props.children}

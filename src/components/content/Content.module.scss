@@ -1,0 +1,26 @@
+@import '../../variables/variables.scss';
+
+main{
+  h1{
+    top: 130px;
+    left: 110px;
+    position: absolute;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include fontRaleway(600);
+  }
+}
+
+.wrapper{
+  position: absolute;
+  top: 300px;
+  width: 84%;
+  left: 120px;
+  min-height: 600px;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3,366px);
+  justify-content: space-between;
+  grid-row-gap: 120px;
+}
+

@@ -14,8 +14,8 @@ class App extends Component {
         <CategoryProvider>
           <div className="App">
             <Header />
+            <Content />
           </div>
-          <Content />
         </CategoryProvider>
       </CurrencyProvider>
     );
